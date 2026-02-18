@@ -7,8 +7,8 @@
     "alt": "Screenshot of a fashion e-commerce website",
     "hint": "fashion website"
   },
-  "budget_buddy": {
-    "src": "/budget_buddy.png",
+  "moneymap": {
+    "src": "/moneymap.png",
     "width": 800,
     "height": 600,
     "alt": "Screenshot of a budget_buddy website interface",
@@ -34,6 +34,13 @@
     "height": 600,
     "alt": "Screenshot of the portfolio website itself",
     "hint": "developer portfolio"
+  },
+  "profilepic": {
+    "src": "/profile_pic.png",
+    "width": 800,
+    "height": 600,
+    "alt": "Bharath Kiran Profile Picture",
+    "hint": "portrait man"
   },
   "blogThumb1": {
     "src": "https://picsum.photos/seed/thumb1/800/600",

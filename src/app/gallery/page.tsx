@@ -12,7 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-type PhotoCategory = 'Development' | 'Events' | 'Behind the Scenes' | 'Personal' | 'Nature';
+type PhotoCategory = 'Development' | 'Events' | 'Behind the Scenes' | 'Certifications' | 'Personal' | 'Nature';
 
 type Photo = {
   src: string;
@@ -22,18 +22,25 @@ type Photo = {
   hint: string;
   caption: string;
   date: string;
-  category: PhotoCategory;
+  category: PhotoCategory[] | PhotoCategory;
 };
 
 const photosData: Photo[] = [
-  { ...placeholderImages.yoloo, caption: "Yoloo - Fashion E-Commerce Platform", date: "2024", category: "Development" },
-  { ...placeholderImages.budget_buddy, caption: "Budget Buddy - AI-Powered Finance Tracker", date: "2024", category: "Development" },
+  { ...placeholderImages.yoloo, caption: "Yoloo - Fashion E-Commerce Platform", date: "2025", category: "Development" },
+  { ...placeholderImages.moneymap, caption: "MoneyMap - AI-Powered Finance Tracker", date: "2025", category: "Development" },
   { ...placeholderImages.gender_age_prediction, caption: "Gender & Age Prediction - ML Application", date: "2023", category: "Development" },
   { ...placeholderImages.portfolioWebsite, caption: "Personal Portfolio Website", date: "2024", category: "Development" },
-  { src: '/profile_pic.png', width: 320, height: 384, alt: 'Bharath Kiran Profile Picture', hint: 'portrait man', caption: 'Bharath Kiran - Full Stack Developer', date: '2024', category: 'Personal' },
+  { ...placeholderImages.puck_man, caption: "PuckMan Game", date: "2026", category: ["Development", "Events"] },
+  { ...placeholderImages.profilepic, caption: 'Bharath Kiran - Full Stack Developer', date: '2024', category: 'Personal' },
+  { ...placeholderImages.certGoogleUX, caption: 'Google UX Design Certificate', date: '2024', category: 'Certifications' },
+  { ...placeholderImages.certGoogleData, caption: 'Google Data Analytics Certificate', date: '2024', category: 'Certifications' },
+  { ...placeholderImages.certNPTEL_CG, caption: 'NPTEL Computer Graphics Certificate', date: '2023', category: 'Certifications' },
+  { ...placeholderImages.certNPTEL_ST, caption: 'NPTEL Software Testing Certificate', date: '2024', category: 'Certifications' },
+  { ...placeholderImages.certCompilers, caption: 'Stanford-edX Compilers Certificate', date: '2024', category: 'Certifications' },
+  { ...placeholderImages.certJobReady, caption: 'JobReady Employability Skills Certificate', date: '2024', category: 'Certifications' },
 ];
 
-const filters: ('All' | PhotoCategory)[] = ['All', 'Development', 'Events', 'Behind the Scenes', 'Personal', 'Nature'];
+const filters: ('All' | PhotoCategory)[] = ['All', 'Development', 'Events', 'Behind the Scenes', 'Certifications', 'Personal', 'Nature'];
 const INITIAL_ITEMS = 12;
 
 const GallerySkeleton = () => (
@@ -65,7 +72,7 @@ const GalleryPage = () => {
 
     const filteredPhotos = useMemo(() => {
         if (activeFilter === 'All') return photosData;
-        return photosData.filter(p => p.category === activeFilter);
+        return photosData.filter(p => Array.isArray(p.category) ? p.category.includes(activeFilter) : p.category === activeFilter);
     }, [activeFilter]);
 
     const itemsToShow = isExpanded ? filteredPhotos.length : INITIAL_ITEMS;
@@ -114,7 +121,7 @@ const GalleryPage = () => {
     
     const getCategoryCount = (category: 'All' | PhotoCategory) => {
         if (category === 'All') return photosData.length;
-        return photosData.filter(p => p.category === category).length;
+        return photosData.filter(p => Array.isArray(p.category) ? p.category.includes(category) : p.category === category).length;
     };
 
 
