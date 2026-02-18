@@ -24,7 +24,7 @@ const socialItems = [
   { label: 'HackerRank', link: "https://www.hackerrank.com/profile/bharathkiran2422", icon: <SiHackerrank /> },
   { label: 'LeetCode', link: "https://leetcode.com/u/Bharath_Kiran/", icon: <SiLeetcode /> },
   { label: 'CodeChef', link: "https://www.codechef.com/users/bharath2422", icon: <SiCodechef /> },
-  { label: 'Contact', link: "mailto:bharathkiranobilisetty@gmail.com?subject=Hello&body=I'd like to connect", icon: <Send /> },
+  { label: 'Contact', link: "/contact", icon: <Send /> },
 ]
 
 /**

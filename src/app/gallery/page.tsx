@@ -40,7 +40,7 @@ const photosData: Photo[] = [
   { ...placeholderImages.certJobReady, caption: 'JobReady Employability Skills Certificate', date: '2024', category: 'Certifications' },
 ];
 
-const filters: ('All' | PhotoCategory)[] = ['All', 'Development', 'Events', 'Certifications', 'Personal'];
+const filters: ('All' | PhotoCategory)[] = ['All', 'Development', 'Events', 'Certifications', 'Personal', 'Behind the Scenes', 'Nature'];
 const INITIAL_ITEMS = 12;
 
 /**

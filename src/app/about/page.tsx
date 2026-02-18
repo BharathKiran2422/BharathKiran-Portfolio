@@ -148,7 +148,7 @@ const AboutPage = () => {
                         Have a project in mind or want to discuss technology? I'd love to hear from you.
                     </p>
                     <Button size="lg" asChild className="button-gradient-primary shadow-lg shadow-primary/20 hover:scale-105 transition-transform cursor-target">
-                        <a href="mailto:bharathkiranobilisetty@gmail.com?subject=Hello&body=I'd like to connect">Get in Touch</a>
+                        <Link href="/contact">Get in Touch</Link>
                     </Button>
                 </CardContent>
             </Card>

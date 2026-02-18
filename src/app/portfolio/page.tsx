@@ -78,6 +78,44 @@ const projectsData: Project[] = [
     status: 'Completed',
     category: ['UI/UX', 'Web Apps'],
   },
+  /*
+  {
+    title: "RideTogether - AI Ride-Sharing App",
+    description: "Community-based carpooling platform with AI-powered ride matching, wallet integration, and carbon footprint tracking for sustainable transportation.",
+    image: placeholderImages.rideTogether,
+    techStack: ["React Native", "Node.js", "PostgreSQL", "Firebase", "AI/ML"],
+    links: { live: '#', github: '#', caseStudy: '#' },
+    status: 'Completed',
+    category: ['Web Apps', 'Full-Stack', 'Data Science'],
+  },
+  {
+    title: "Educational CMS",
+    description: "Content management system for educational institutions featuring course management, student portals, and administrative dashboards.",
+    image: placeholderImages.educationalCMS,
+    techStack: ["React", "Node.js", "MySQL", "Authentication"],
+    links: { github: '#', caseStudy: '#' },
+    status: 'Completed',
+    category: ['Full-Stack', 'Web Apps'],
+  },
+  {
+    title: "Personal Blog Platform",
+    description: "A full-featured blog platform with a markdown editor, comments, and a custom-built CMS for managing posts and categories.",
+    image: placeholderImages.blogPlatform,
+    techStack: ["Next.js", "Tailwind CSS", "Firebase", "Markdown"],
+    links: { live: '#', github: '#' },
+    status: 'Completed',
+    category: ['UI/UX', 'Web Apps'],
+  },
+  {
+    title: "Task Management App",
+    description: "A Kanban-style task management app with drag-and-drop functionality, user authentication, and real-time updates.",
+    image: placeholderImages.taskManager,
+    techStack: ["React", "Firebase", "dnd-kit"],
+    links: { live: '#', github: '#' },
+    status: 'Completed',
+    category: ['Web Apps', 'UI/UX'],
+  },
+  */
 ];
 
 const filters = ['All', 'Web Apps', 'Full-Stack', 'UI/UX', 'Data Science'];

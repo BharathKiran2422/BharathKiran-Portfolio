@@ -29,8 +29,8 @@ type ContactFormValues = z.infer<typeof contactSchema>;
 const contactInfo = [
     { icon: <AtSign />, text: "bharathkiranobilisetty@gmail.com", href: "mailto:bharathkiranobilisetty@gmail.com?subject=Hello&body=I'd like to connect" },
     { icon: <Phone />, text: "+91 8639678884", href: "tel:+918639678884" },
-    { icon: <Linkedin />, text: "LinkedIn Profile", href: "https://www.linkedin.com/in/bharath-kiran-obilisetty-289b1022b" },
-    { icon: <Github />, text: "GitHub Profile", href: "https://github.com/BharathKiran2422" },
+    { icon: <Linkedin />, text: "bharath-kiran-obilisetty-289b1022b", href: "https://www.linkedin.com/in/bharath-kiran-obilisetty-289b1022b" },
+    { icon: <Github />, text: "BharathKiran2422", href: "https://github.com/BharathKiran2422" },
     { icon: <MapPin />, text: "Tadepalli, Andhra Pradesh, India" },
 ];
 
