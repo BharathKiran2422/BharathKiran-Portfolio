@@ -25,9 +25,14 @@ const socialLinks = [
   { href: "https://www.hackerrank.com/profile/bharathkiran2422", icon: <SiHackerrank className="h-7 w-7" />, ariaLabel: "HackerRank", isExternal: true },
   { href: "https://leetcode.com/u/Bharath_Kiran/", icon: <SiLeetcode className="h-7 w-7" />, ariaLabel: "LeetCode", isExternal: true },
   { href: "https://www.codechef.com/users/bharath2422", icon: <SiCodechef className="h-7 w-7" />, ariaLabel: "CodeChef", isExternal: true },
-  { href: "/contact", icon: <Send className="h-7 w-7" />, ariaLabel: "Contact", isExternal: false },
+  { href: "mailto:bharathkiranobilisetty@gmail.com?subject=Hello&body=I'd like to connect", icon: <Send className="h-7 w-7" />, ariaLabel: "Contact", isExternal: true },
 ]
 
+/**
+ * Renders animated decorative orbs in the background.
+ * This is a purely visual component for aesthetic effect.
+ * @returns {JSX.Element} The animated background orbs.
+ */
 const AnimatedOrbs = () => (
   <div className="absolute inset-0 -z-10 overflow-hidden">
     <div className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-primary/20 blur-3xl animate-[spin_20s_linear_infinite]" />
@@ -36,6 +41,11 @@ const AnimatedOrbs = () => (
   </div>
 );
 
+/**
+ * Renders the Home page of the portfolio.
+ * It includes a hero section with a typing animation, a 3D-tilting profile picture, and a stats section.
+ * @returns {JSX.Element} The rendered Home page.
+ */
 export default function Home() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [text, setText] = useState('');
@@ -253,5 +263,3 @@ export default function Home() {
     </>
   );
 }
-
-    

@@ -1,3 +1,4 @@
+
 "use client"
 
 // Inspired by react-hot-toast library
@@ -74,6 +75,13 @@ const addToRemoveQueue = (toastId: string) => {
   toastTimeouts.set(toastId, timeout)
 }
 
+/**
+ * Reducer function for managing toast state.
+ * It handles adding, updating, dismissing, and removing toasts.
+ * @param {State} state - The current state.
+ * @param {Action} action - The dispatched action.
+ * @returns {State} The new state.
+ */
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case "ADD_TOAST":
@@ -140,6 +148,12 @@ function dispatch(action: Action) {
 
 type Toast = Omit<ToasterToast, "id">
 
+/**
+ * Creates and dispatches a new toast notification.
+ * This is the primary function for triggering toasts from components.
+ * @param {Toast} props - The properties for the toast, like title, description, and variant.
+ * @returns {{ id: string, dismiss: () => void, update: (props: ToasterToast) => void }} An object to control the toast.
+ */
 function toast({ ...props }: Toast) {
   const id = genId()
 
@@ -169,6 +183,11 @@ function toast({ ...props }: Toast) {
   }
 }
 
+/**
+ * A custom hook to access the toast state and dispatcher.
+ * This allows components to consume the toast state and trigger new toasts.
+ * @returns The current toast state and dispatcher functions.
+ */
 function useToast() {
   const [state, setState] = React.useState<State>(memoryState)
 

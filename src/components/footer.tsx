@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Github, Linkedin, Mountain, Send } from 'lucide-react';
 import { SiLeetcode, SiCodechef, SiHackerrank } from 'react-icons/si';
@@ -8,10 +9,14 @@ const socialLinks = [
   { href: "https://www.hackerrank.com/profile/bharathkiran2422", icon: <SiHackerrank className="h-5 w-5" />, ariaLabel: "HackerRank", isExternal: true },
   { href: "https://leetcode.com/u/Bharath_Kiran/", icon: <SiLeetcode className="h-5 w-5" />, ariaLabel: "LeetCode", isExternal: true },
   { href: "https://www.codechef.com/users/bharath2422", icon: <SiCodechef className="h-5 w-5" />, ariaLabel: "CodeChef", isExternal: true },
-  { href: "/contact", icon: <Send className="h-5 w-5" />, ariaLabel: "Contact", isExternal: false },
+  { href: "mailto:bharathkiranobilisetty@gmail.com?subject=Hello&body=I'd like to connect", icon: <Send className="h-5 w-5" />, ariaLabel: "Contact", isExternal: true },
 ]
 
-
+/**
+ * Renders the footer for the website.
+ * It includes a logo, copyright notice, and social media links.
+ * @returns {JSX.Element} The rendered footer component.
+ */
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -45,5 +50,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-    

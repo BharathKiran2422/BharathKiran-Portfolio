@@ -26,6 +26,12 @@ type StaggeredMenuProps = {
   scrolled?: boolean;
 };
 
+/**
+ * Renders a full-screen, animated staggered menu.
+ * It provides a highly customizable and visually appealing navigation experience.
+ * @param {StaggeredMenuProps} props - The properties to configure the menu's appearance and behavior.
+ * @returns {JSX.Element} The rendered staggered menu component.
+ */
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   position = 'right',
   colors = ['#B19EEF', '#5227FF'],

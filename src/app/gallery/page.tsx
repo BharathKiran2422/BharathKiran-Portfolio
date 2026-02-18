@@ -40,9 +40,14 @@ const photosData: Photo[] = [
   { ...placeholderImages.certJobReady, caption: 'JobReady Employability Skills Certificate', date: '2024', category: 'Certifications' },
 ];
 
-const filters: ('All' | PhotoCategory)[] = ['All', 'Development', 'Events', 'Behind the Scenes', 'Certifications', 'Personal', 'Nature'];
+const filters: ('All' | PhotoCategory)[] = ['All', 'Development', 'Events', 'Certifications', 'Personal'];
 const INITIAL_ITEMS = 12;
 
+/**
+ * Renders a skeleton loader for the gallery while images are loading.
+ * This provides a better user experience by showing a placeholder structure.
+ * @returns {JSX.Element} A set of animated placeholder boxes.
+ */
 const GallerySkeleton = () => (
     <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
         {[...Array(8)].map((_, i) => (
@@ -53,6 +58,11 @@ const GallerySkeleton = () => (
     </div>
 );
 
+/**
+ * Renders the main Gallery page, displaying a collection of photos with filtering and a lightbox.
+ * It manages state for filters, loading, and lightbox visibility.
+ * @returns {JSX.Element} The complete gallery page component.
+ */
 const GalleryPage = () => {
     const [activeFilter, setActiveFilter] = useState<'All' | PhotoCategory>('All');
     const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -276,6 +286,12 @@ const GalleryPage = () => {
   );
 };
 
+/**
+ * Renders a placeholder SVG icon for when an image is not available.
+ * This is a fallback for the gallery's empty state.
+ * @param {React.SVGProps<SVGSVGElement>} props - Standard SVG properties.
+ * @returns {JSX.Element} A placeholder image icon.
+ */
 function ImagePlaceholderIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg

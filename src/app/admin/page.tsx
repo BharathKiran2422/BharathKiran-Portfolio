@@ -9,6 +9,11 @@ import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Shield, KeyRound, LogIn } from 'lucide-react';
 
+/**
+ * Renders the admin page, which is a protected route for viewing contact form submissions.
+ * It handles authentication via a password stored in session storage.
+ * @returns {JSX.Element} The rendered admin page or authentication form.
+ */
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState('');

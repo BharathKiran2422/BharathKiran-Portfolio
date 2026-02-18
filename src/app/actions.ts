@@ -1,3 +1,4 @@
+
 'use server';
 
 import { z } from 'zod';
@@ -22,6 +23,12 @@ type FormState = {
   success: boolean;
 };
 
+/**
+ * Submits contact form data to the 'Messages' collection in Firestore.
+ * It validates the data against a schema before saving.
+ * @param {z.infer<typeof contactSchema>} data - The contact form data.
+ * @returns {Promise<FormState>} A state object indicating success or failure.
+ */
 export async function submitContactForm(
   data: z.infer<typeof contactSchema>
 ): Promise<FormState> {
@@ -50,7 +57,12 @@ export async function submitContactForm(
   }
 }
 
-
+/**
+ * Verifies if the provided password matches the admin password in environment variables.
+ * This is used to protect the admin panel.
+ * @param {string} password - The password to verify.
+ * @returns {Promise<{success: boolean; error?: string}>} An object indicating if authentication was successful.
+ */
 export async function verifyAdminPassword(password: string): Promise<{success: boolean; error?: string}> {
     if (password === process.env.ADMIN_PASSWORD) {
         return { success: true };
@@ -69,6 +81,11 @@ export interface Message {
   read: boolean;
 }
 
+/**
+ * Fetches all messages from the 'Messages' collection in Firestore, ordered by creation date.
+ * This is for the admin panel to display received messages.
+ * @returns {Promise<{ messages?: Message[]; error?: string; }>} An object containing messages or an error.
+ */
 export async function getMessages(): Promise<{ messages?: Message[]; error?: string; }> {
   try {
     const messagesCollection = collection(db, 'Messages');
@@ -94,6 +111,12 @@ export async function getMessages(): Promise<{ messages?: Message[]; error?: str
   }
 }
 
+/**
+ * Deletes a specific message from the Firestore 'Messages' collection.
+ * This is an administrative action.
+ * @param {string} id - The ID of the message to delete.
+ * @returns {Promise<{ success: boolean; error?: string }>} An object indicating success or failure.
+ */
 export async function deleteMessage(id: string): Promise<{ success: boolean; error?: string }> {
   try {
     await deleteDoc(doc(db, 'Messages', id));
@@ -104,6 +127,13 @@ export async function deleteMessage(id: string): Promise<{ success: boolean; err
   }
 }
 
+/**
+ * Toggles the 'read' status of a message in the Firestore collection.
+ * This helps admins track which messages have been reviewed.
+ * @param {string} id - The ID of the message to update.
+ * @param {boolean} currentStatus - The current 'read' status of the message.
+ * @returns {Promise<{ success: boolean; error?: string }>} An object indicating success or failure.
+ */
 export async function toggleMessageReadStatus(id: string, currentStatus: boolean): Promise<{ success: boolean; error?: string }> {
   try {
     await updateDoc(doc(db, 'Messages', id), { read: !currentStatus });

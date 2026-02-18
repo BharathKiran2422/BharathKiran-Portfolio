@@ -47,6 +47,12 @@ interface InboxProps {
   onLogout: () => void;
 }
 
+/**
+ * Renders the inbox interface for the admin panel.
+ * It fetches, displays, and allows management of messages from the contact form.
+ * @param {InboxProps} { onLogout } - A function to handle user logout.
+ * @returns {JSX.Element} The rendered inbox component.
+ */
 export default function Inbox({ onLogout }: InboxProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);

@@ -6,6 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import { Button } from './ui/button';
 
+/**
+ * A "Back to Top" button that appears when the user scrolls down the page.
+ * It provides a quick way to return to the top of the page with a smooth scrolling animation.
+ * @returns {JSX.Element | null} The rendered button, or null if not visible.
+ */
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 

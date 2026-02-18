@@ -27,7 +27,7 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>;
 
 const contactInfo = [
-    { icon: <AtSign />, text: "bharathkiranobilisetty@gmail.com", href: "mailto:bharathkiranobilisetty@gmail.com" },
+    { icon: <AtSign />, text: "bharathkiranobilisetty@gmail.com", href: "mailto:bharathkiranobilisetty@gmail.com?subject=Hello&body=I'd like to connect" },
     { icon: <Phone />, text: "+91 8639678884", href: "tel:+918639678884" },
     { icon: <Linkedin />, text: "LinkedIn Profile", href: "https://www.linkedin.com/in/bharath-kiran-obilisetty-289b1022b" },
     { icon: <Github />, text: "GitHub Profile", href: "https://github.com/BharathKiran2422" },
@@ -53,6 +53,11 @@ const faqItems = [
     },
 ];
 
+/**
+ * Renders the submit button for the contact form, showing a pending state during submission.
+ * This is a client component that uses the `useFormStatus` hook.
+ * @returns {JSX.Element} The rendered submit button.
+ */
 function SubmitButton() {
     const { pending } = useFormStatus();
     return (
@@ -71,6 +76,11 @@ function SubmitButton() {
     );
 }
 
+/**
+ * Renders the Contact page with a contact form, contact information, and an FAQ section.
+ * It uses React Hook Form for form management and Zod for validation.
+ * @returns {JSX.Element} The rendered Contact page.
+ */
 export default function ContactPage() {
     const { toast } = useToast();
     

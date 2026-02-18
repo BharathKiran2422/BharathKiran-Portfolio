@@ -4,7 +4,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Award, Briefcase, Building, Calendar, CheckCircle, Code, Download, GraduationCap, Mail, MapPin, Monitor, Puzzle, School, ShieldCheck, Star, User, Zap, BrainCircuit, Users, Clock, Lightbulb, TrendingUp, HeartHandshake } from 'lucide-react';
+import { Award, Briefcase, Building, Calendar, CheckCircle, Code, Download, GraduationCap, Mail, MapPin, User, Zap, BrainCircuit, Users, Clock, Lightbulb, TrendingUp, HeartHandshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -126,7 +126,11 @@ const resumeProfile = {
   ]
 };
 
-
+/**
+ * Renders the Resume page, which provides a comprehensive overview of professional experience, education, skills, and certifications.
+ * It uses a tabbed interface to organize the information clearly.
+ * @returns {JSX.Element} The rendered Resume page.
+ */
 const ResumePage = () => {
     
     const containerVariants = {

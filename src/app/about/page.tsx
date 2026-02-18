@@ -2,7 +2,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { BrainCircuit, Code, HeartHandshake, Eye, Mountain, Bike } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -36,6 +35,11 @@ const aboutContent = {
     }
 }
 
+/**
+ * Renders the About page, showcasing professional background and personal interests.
+ * It uses Framer Motion for animations and displays content in a card-based layout.
+ * @returns {JSX.Element} The rendered About page.
+ */
 const AboutPage = () => {
     
     const containerVariants = {
@@ -144,7 +148,7 @@ const AboutPage = () => {
                         Have a project in mind or want to discuss technology? I'd love to hear from you.
                     </p>
                     <Button size="lg" asChild className="button-gradient-primary shadow-lg shadow-primary/20 hover:scale-105 transition-transform cursor-target">
-                        <Link href="/contact">Get in Touch</Link>
+                        <a href="mailto:bharathkiranobilisetty@gmail.com?subject=Hello&body=I'd like to connect">Get in Touch</a>
                     </Button>
                 </CardContent>
             </Card>

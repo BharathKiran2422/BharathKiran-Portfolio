@@ -1,9 +1,16 @@
+
 'use client';
 
 import { useEffect, useRef, useCallback, useMemo } from 'react';
 import { gsap } from 'gsap';
 import './target-cursor.css';
 
+/**
+ * A custom animated cursor that interacts with target elements on the page.
+ * It provides a unique "target" visual effect when hovering over elements with the 'cursor-target' class.
+ * @param {object} props - Component properties for customization.
+ * @returns {JSX.Element | null} The rendered cursor element, or null on mobile devices.
+ */
 const TargetCursor = ({
   targetSelector = '.cursor-target',
   spinDuration = 2,

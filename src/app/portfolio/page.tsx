@@ -61,7 +61,7 @@ const projectsData: Project[] = [
     category: ['Java', 'Game Dev'],
   },
   {
-    title: "Gender_Age_Predition",
+    title: "Gender & Age Prediction",
     description: "This project utilizes Convolutional Neural Networks (CNNs) to accurately predict the gender and age of individuals from facial images. Trained on the comprehensive UTKFace dataset, the model is adept at recognizing gender and estimating age ranges.",
     image: placeholderImages.gender_age_prediction,
     techStack: ["Python (Version 3.x)", "TensorFlow (Version 2.x)", "Keras", "OpenCV", "NumPy", "Matplotlib"],
@@ -78,48 +78,15 @@ const projectsData: Project[] = [
     status: 'Completed',
     category: ['UI/UX', 'Web Apps'],
   },
-  /*
-  {
-    title: "RideTogether - AI Ride-Sharing App",
-    description: "Community-based carpooling platform with AI-powered ride matching, wallet integration, and carbon footprint tracking for sustainable transportation.",
-    image: placeholderImages.rideTogether,
-    techStack: ["React Native", "Node.js", "PostgreSQL", "Firebase", "AI/ML"],
-    links: { live: '#', github: '#', caseStudy: '#' },
-    status: 'Completed',
-    category: ['Web Apps', 'Full-Stack', 'Data Science'],
-  },
-  {
-    title: "Educational CMS",
-    description: "Content management system for educational institutions featuring course management, student portals, and administrative dashboards.",
-    image: placeholderImages.educationalCMS,
-    techStack: ["React", "Node.js", "MySQL", "Authentication"],
-    links: { github: '#', caseStudy: '#' },
-    status: 'Completed',
-    category: ['Full-Stack', 'Web Apps'],
-  },
-  {
-    title: "Personal Blog Platform",
-    description: "A full-featured blog platform with a markdown editor, comments, and a custom-built CMS for managing posts and categories.",
-    image: placeholderImages.blogPlatform,
-    techStack: ["Next.js", "Tailwind CSS", "Firebase", "Markdown"],
-    links: { live: '#', github: '#' },
-    status: 'Completed',
-    category: ['UI/UX', 'Web Apps'],
-  },
-  {
-    title: "Task Management App",
-    description: "A Kanban-style task management app with drag-and-drop functionality, user authentication, and real-time updates.",
-    image: placeholderImages.taskManager,
-    techStack: ["React", "Firebase", "dnd-kit"],
-    links: { live: '#', github: '#' },
-    status: 'Completed',
-    category: ['Web Apps', 'UI/UX'],
-  },
-  */
 ];
 
 const filters = ['All', 'Web Apps', 'Full-Stack', 'UI/UX', 'Data Science'];
 
+/**
+ * Renders the Portfolio page, showcasing a filterable grid of projects.
+ * It uses Framer Motion for animations and displays project details in cards.
+ * @returns {JSX.Element} The rendered Portfolio page.
+ */
 const PortfolioPage = () => {
     const [activeFilter, setActiveFilter] = useState('All');
 
@@ -169,7 +136,7 @@ const PortfolioPage = () => {
             animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-            {filteredProjects.map((project, index) => (
+            {filteredProjects.map((project) => (
                 <motion.div
                     key={project.title}
                     variants={itemVariants}
@@ -178,7 +145,7 @@ const PortfolioPage = () => {
                     `}
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative">
+                    <div className="relative flex flex-col h-full">
                        <Image 
                            src={project.image.src}
                            alt={project.image.alt}
@@ -188,8 +155,8 @@ const PortfolioPage = () => {
                            className="w-full h-auto object-cover"
                        />
                        <div className="p-6 flex flex-col flex-grow">
-                           <div className="flex justify-between items-start">
-                             <h3 className="text-xl font-bold font-headline text-white mb-2">{project.title}</h3>
+                           <div className="flex justify-between items-start mb-2">
+                             <h3 className="text-xl font-bold font-headline text-white">{project.title}</h3>
                              <Badge variant="secondary" className={`bg-green-500/10 text-green-400 border-green-500/20 whitespace-nowrap`}>{project.status}</Badge>
                            </div>
                            <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>

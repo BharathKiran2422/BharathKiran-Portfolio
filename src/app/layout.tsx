@@ -26,6 +26,12 @@ export const metadata: Metadata = {
   description: 'Building Digital Experiences That Matter',
 };
 
+/**
+ * The root layout for the entire application.
+ * It sets up the global fonts, theme, header, footer, and other providers.
+ * @param {object} { children: React.ReactNode } - The child components to render within the layout.
+ * @returns {JSX.Element} The root HTML structure of the application.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

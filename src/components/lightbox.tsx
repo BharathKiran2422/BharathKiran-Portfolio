@@ -17,6 +17,12 @@ interface LightboxProps {
   setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
+/**
+ * Renders a full-screen lightbox component for viewing images.
+ * It supports keyboard navigation (arrows, escape) and includes next/previous buttons.
+ * @param {LightboxProps} props - The properties for configuring the lightbox.
+ * @returns {JSX.Element} The rendered lightbox dialog.
+ */
 export function Lightbox({ open, onOpenChange, images, selectedIndex, setSelectedIndex }: LightboxProps) {
   const currentImage = images[selectedIndex];
 
