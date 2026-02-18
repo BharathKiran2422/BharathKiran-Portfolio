@@ -74,7 +74,7 @@ const projectsData: Project[] = [
     description: "My personal portfolio site, built from scratch to showcase my skills in modern web development and design.",
     image: placeholderImages.portfolioWebsite,
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    links: { live: 'https://bharath-kiran.vercel.app', github: 'https://github.com/BharathKiran2422/Bharath.Kiran-Portfolio' },
+    links: { live: 'https://bharath-kiran.vercel.app', github: 'https://github.com/BharathKiran2422/BharathKiran-Portfolio' },
     status: 'Completed',
     category: ['UI/UX', 'Web Apps'],
   },
