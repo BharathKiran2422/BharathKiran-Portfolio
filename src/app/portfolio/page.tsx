@@ -47,7 +47,7 @@ const projectsData: Project[] = [
     description: "Take Control of Your Finances. The simple, smart, and secure way to manage your money. Track spending, visualize habits, and get AI-powered insights to save more.",
     image: placeholderImages.moneymap,
     techStack: ["React Native", "Node.js", "PostgreSQL", "Firebase", "AI/ML"],
-    links: { live: 'https://money-map-mm.vercel.app', github: 'https://github.com/BharathKiran2422/MoneyMap', caseStudy: '#' },
+    links: { live: 'https://money-map-123.vercel.app', github: 'https://github.com/BharathKiran2422/MoneyMap', caseStudy: '#' },
     status: 'Completed',
     category: ['Web Apps', 'Full-Stack', 'Data Science'],
   },
